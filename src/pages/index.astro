@@ -54,25 +54,10 @@ const experiences = [
     <!-- ===== HERO ===== -->
     <section id="hero" class="relative min-h-screen">
       <div class="relative mx-auto h-screen">
-        <!-- Badges -->
-        <div
-          class="absolute z-30 flex flex-col gap-2
-                 left-[4%] top-[4%]
-                 sm:left-auto sm:right-[8%] sm:top-[32%] sm:gap-3
-                 md:right-[8%] md:top-[32%]"
-        >
-          <div class="badge badge-neutral badge-sm sm:badge-xl text-white">
-            2+ years experience
-          </div>
-          <div class="badge badge-neutral badge-sm sm:badge-xl text-white">
-            10+ projects shipped
-          </div>
-        </div>
-
-        <!-- Heading + tagline -->
+        <!-- Heading + tagline + badges -->
         <div
           class="absolute z-30
-                 left-[4%] top-[12%] w-[60%]
+                 left-[4%] top-[6%] w-[60%]
                  sm:left-[4%] sm:top-[20%] sm:max-w-[38%]
                  md:left-[4%] md:top-[20%] md:max-w-[38%]"
         >
@@ -103,6 +88,18 @@ const experiences = [
           >
             Indonesia · Open to work
           </p>
+          <div
+            class="flex flex-row flex-wrap gap-2 mt-4
+                   sm:absolute sm:flex-col sm:gap-3
+                   sm:right-[calc(-100%-3rem)] sm:top-0"
+          >
+            <div class="badge badge-neutral badge-sm sm:badge-xl text-white">
+              2+ years experience
+            </div>
+            <div class="badge badge-neutral badge-sm sm:badge-xl text-white">
+              10+ projects shipped
+            </div>
+          </div>
         </div>
 
         <!-- Name -->
@@ -125,7 +122,7 @@ const experiences = [
 
         <!-- Web Developer label -->
         <span
-          class="font-label animate-fade-up animate-once animate-ease-out absolute text-[#8C6F63] tracking-[0.3em] uppercase
+          class="font-label animate-fade-up animate-once animate-ease-out absolute z-20 text-heading tracking-[0.3em] uppercase
                  right-[4%] bottom-[12%] text-sm
                  sm:right-[14%] sm:bottom-[15%] sm:text-lg
                  md:right-[14%] md:bottom-[15%] md:text-2xl
@@ -153,7 +150,10 @@ const experiences = [
       <div
         class="flex flex-col py-16 sm:py-26 items-center justify-center text-body"
       >
-        <div class="gap-5 flex flex-col items-center justify-center px-6 opacity-0" data-animate="fade-up">
+        <div
+          class="gap-5 flex flex-col items-center justify-center px-6 opacity-0"
+          data-animate="fade-up"
+        >
           <h2 class="uppercase text-xl sm:text-2xl font-bold">About Me</h2>
           <div class="h-0.5 w-full max-w-200 bg-heading"></div>
         </div>
@@ -198,7 +198,7 @@ const experiences = [
           </p>
         </div>
         <div
-          class="card bg-white text-body w-full sm:w-[80%] md:w-[60%] shadow-sm mx-6 sm:mx-0 opacity-0"
+          class="card bg-white text-body w-[90%] md:w-[60%] shadow-sm mx-6 sm:mx-0 opacity-0"
           data-animate="fade-up"
           data-delay="500"
         >
@@ -502,7 +502,8 @@ const experiences = [
 
         setActive(target)
 
-        oldPanel.style.transition = 'transform 0.3s ease-in, opacity 0.3s ease-in'
+        oldPanel.style.transition =
+          'transform 0.3s ease-in, opacity 0.3s ease-in'
         oldPanel.style.transform = `translateX(${-100 * dir}%)`
         oldPanel.style.opacity = '0'
 
@@ -519,7 +520,8 @@ const experiences = [
 
           requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-              newPanel.style.transition = 'transform 0.35s ease-out, opacity 0.35s ease-out'
+              newPanel.style.transition =
+                'transform 0.35s ease-out, opacity 0.35s ease-out'
               newPanel.style.transform = 'translateX(0)'
               newPanel.style.opacity = '1'
 
