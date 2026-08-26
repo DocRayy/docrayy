@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import projectsData from '../data/project.json'
+---
+
+<Layout
+  title="Projects - Rayyan Kheisar Syaifullah"
+  description="Browse all projects by Rayyan Kheisar Syaifullah — web applications built with React, Next.js, Laravel, Angular, and more."
+>
+  <section
+    class="min-h-screen px-6 sm:px-10 md:px-15 pt-28 sm:pt-36 pb-24 text-body"
+  >
+    <div class="flex flex-col items-center gap-5 text-center">
+      <h1
+        class="font-display font-extrabold uppercase text-3xl sm:text-5xl text-heading"
+      >
+        Projects
+      </h1>
+      <div class="h-0.5 w-full max-w-200 bg-heading"></div>
+      <p class="text-base sm:text-xl max-w-xl px-4">
+        A collection of things I have designed and built — from full-stack web
+        apps to small experiments.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {projectsData.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</Layout>

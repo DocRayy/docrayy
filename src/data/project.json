@@ -1,0 +1,126 @@
+[
+  {
+    "id": "ondary",
+    "title": "Ondary",
+    "subtitle": "Project Management System And Team Collaboration With Electron On FOLXCODE",
+    "category": "Web Application",
+    "framework": ["Angular", "Nest.js"],
+    "tools": ["MySQL", "Socket.io", "Electron", "Tailwind CSS", "Figma", "Git"],
+    "cover": "/images/projects/ondary.png",
+    "description": "Ondary is an enterprise-grade project management and team collaboration desktop application designed specifically for the operational scope of Folxcode. Developed as a final year project using Electron, Angular 20, NestJS, and Socket.IO, Ondary unifies workspace administration, streamlines team communication, and provides real-time task management via an interactive Kanban board to optimize software development workflows.",
+    "gallery": ["/images/projects/ondary1.png", "/images/projects/ondary2.png"],
+    "color": ["#1A2026", "#475569", "#E2E8F0"]
+  },
+  {
+    "id": "leazone",
+    "title": "Leazone",
+    "subtitle": "Your Daily Rental Hub",
+    "category": "Web Application",
+    "framework": ["Next.js", "Strapi"],
+    "tools": ["MySQL", "Tailwind CSS", "Figma", "Git", "Midtrans", "PWA"],
+    "cover": "/images/projects/leazone.png",
+    "description": "LEAZONE is a modern web-based platform developed using Next.js and Strapi, designed to facilitate the seamless rental and listing of everyday items in Batam, empowering users not only to find and rent essential goods for daily use with ease and convenience, but also to become providers themselves by offering their own items for rent, all through an intuitive, responsive, and user-friendly digital experience tailored to the growing demand for accessible and community-driven sharing services.",
+    "gallery": [
+      "/images/projects/leazone1.png",
+      "/images/projects/leazone2.png"
+    ],
+    "color": ["#F9DDDD", "#B33133", "#FFFFFF"]
+  },
+  {
+    "id": "cv-kilat",
+    "title": "CV Kilat",
+    "subtitle": "Create a Professional CV in Minutes",
+    "category": "Web Application",
+    "framework": ["Next.js", "Strapi"],
+    "tools": ["MySQL", "Tailwind CSS", "Figma", "Git", "Midtrans"],
+    "cover": "/images/projects/cvkilat.png",
+    "description": "CVKilat is a modern and user-friendly web application built with Next.js for the frontend and Strapi as the backend, designed to help users easily create professional and visually appealing CVs. By simply entering their personal information, education, work experience, and skills into a guided form, users can instantly generate a complete, well-structured CV without worrying about formatting or design. The platform streamlines the entire process, making CV creation fast, accessible, and hassle-free for everyone.",
+    "gallery": [
+      "/images/projects/cvkilat1.png",
+      "/images/projects/cvkilat2.png"
+    ],
+    "color": ["#5B4B8A", "#9F8FD1", "#F0EDFA"]
+  },
+  {
+    "id": "sitkdn",
+    "title": "SITKDN",
+    "subtitle": "Domestic Component Level (TKDN) information system for products or services.",
+    "category": "Web Application",
+    "framework": ["Laravel"],
+    "tools": ["MySQL", "Figma", "Git"],
+    "cover": "/images/projects/sitkdn.png",
+    "description": "SiTKDN (Domestic Component Level Information System) is an information system designed to manage and provide data related to the Domestic Component Level (TKDN) of products or services. This system assists government agencies and private parties in verifying, documenting, and analyzing the TKDN value of a product/service to support the policy of using domestic products and increasing the competitiveness of the national industry.",
+    "gallery": ["/images/projects/sitkdn1.png", "/images/projects/sitkdn2.png"],
+    "color": ["#2C5F8A", "#8FC1E9", "#EAF4FB"]
+  },
+  {
+    "id": "amal-share",
+    "title": "AmalShare",
+    "subtitle": "Donation app all over indonesia",
+    "category": "UI/UX Design",
+    "framework": ["-"],
+    "tools": ["Figma"],
+    "cover": "/images/projects/amalshare.png",
+    "description": "The product we designed is a user experience application that connects donors with aid organizations and beneficiaries throughout Indonesia. This application is titled, Amal Share: An Integrated Digital Solution for Donation and Humanity Across Indonesia.",
+    "gallery": [
+      "/images/projects/amalshare1.png",
+      "/images/projects/amalshare2.png",
+      "/images/projects/amalshare3.png",
+      "/images/projects/amalshare4.png"
+    ],
+    "color": ["#F5E6CC", "#F9D4A1", "#8D7A61"]
+  },
+  {
+    "id": "cari-celah",
+    "title": "CariCelah",
+    "subtitle": "Lost item tracking system",
+    "category": "IOT and Website",
+    "framework": ["Arduino", "C++", "React"],
+    "tools": ["Arduino IDE", "ESP32", "Buzzer"],
+    "cover": "/images/projects/carcel.png",
+    "description": "CariCelah is an IoT-based lost item tracking tool developed as a 4th-semester university project. Built using the ESP32 microcontroller, CariCelah is designed to help users locate misplaced or lost belongings efficiently by leveraging smart hardware integration and wireless tracking capabilities.",
+    "gallery": ["/images/projects/carcel1.png", "/images/projects/carcel2.png"],
+    "color": ["#88D8C0", "#4DAA8A", "#3D6B5A"]
+  },
+  {
+    "id": "sportscamp",
+    "title": "Sportscamp",
+    "subtitle": "Sports field booking system",
+    "category": "UI/UX Design",
+    "framework": ["-"],
+    "tools": ["Figma", "Pixellab"],
+    "cover": "/images/projects/sportscamp.png",
+    "description": "SportsCamp is a comprehensive sports field booking platform developed as a 3rd-semester university project. Serving as the UI/UX Designer and Logo Designer, I crafted the visual identity and user experience from the ground up, utilizing Figma to design intuitive user interface flows and prototyping, alongside PixelLab and Adobe Photoshop for brand identity and logo creation.",
+    "gallery": [
+      "/images/projects/sportscamp1.png",
+      "/images/projects/sportscamp2.png",
+      "/images/projects/sportscamp3.png",
+      "/images/projects/sportscamp4.png"
+    ],
+    "color": ["#E0F2E9", "#98D7B8", "#416C5A"]
+  },
+  {
+    "id": "sentra-hki",
+    "title": "Sentra HKI Polibatam",
+    "subtitle": "Center for intellectual property rights",
+    "category": "Web Application",
+    "framework": ["Laravel"],
+    "tools": ["Bootstrap", "MySQL"],
+    "cover": "/images/projects/HKI.png",
+    "description": "Sentra HKI Polibatam is a specialized management system designed to streamline and handle intellectual property (HKI) submissions and tracking for academic and research projects at Polibatam. Developed as a 2nd-semester university project, I served as the Backend Developer, responsible for architecting the server-side logic, managing databases, and building robust API endpoints to support secure data handling and application functionality.",
+    "gallery": ["/images/projects/hki1.png", "/images/projects/hki2.png"],
+    "color": ["#11314F", "#2A5B80", "#E1EEF6"]
+  },
+  {
+    "id": "siperu",
+    "title": "SIPERU",
+    "subtitle": "Room Lending System",
+    "category": "Web Application",
+    "framework": ["HTML", "CSS"],
+    "tools": ["Bootstrap", "MySQL"],
+    "cover": "/images/projects/siperu.png",
+    "description": "This project aims to develop an efficient web-based room lending system, prevent double bookings, provide real-time transparency of room availability, and reduce administrative burden through user authentication features, notifications, and room usage analytics.",
+    "gallery": ["/images/projects/siperu1.png", "/images/projects/siperu2.png"],
+    "color": ["#182B49", "#3E6191", "#D9E6F2"]
+  }
+]

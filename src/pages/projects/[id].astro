@@ -1,0 +1,165 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { Icon } from 'astro-icon/components'
+import ProjectCard from '../../components/ProjectCard.astro'
+import projectsData from '../../data/project.json'
+
+export function getStaticPaths() {
+  return projectsData.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }))
+}
+
+const { project } = Astro.props
+const relatedProjects = projectsData
+  .filter((item) => item.id !== project.id)
+  .slice(0, 3)
+---
+
+<Layout
+  title={`${project.title} - Rayyan Kheisar Syaifullah`}
+  description={project.description}
+  image={project.cover}
+>
+  <article class="min-h-screen px-6 sm:px-10 md:px-15 pt-28 sm:pt-36 pb-24 text-body">
+    <a
+      href="/projects"
+      class="inline-flex items-center gap-2 text-sm uppercase text-muted transition-colors hover:text-heading"
+    >
+      <Icon name="lucide:arrow-left" class="size-4" />
+      Back to projects
+    </a>
+
+    <!-- Hero -->
+    <div
+      class="mt-8 aspect-video overflow-hidden rounded-3xl border border-border shadow-lg"
+    >
+      <img
+        src={project.cover}
+        alt={`Cover of ${project.title}`}
+        width="1200"
+        height="800"
+        class="h-full w-full object-cover"
+      />
+    </div>
+
+    <div class="mt-10 flex flex-col gap-10 lg:flex-row">
+      <div class="flex-1">
+        <span class="badge badge-outline border-border text-muted uppercase">
+          {project.category}
+        </span>
+        <h1 class="font-display mt-4 font-extrabold text-2xl sm:text-4xl text-heading">
+          {project.title}
+        </h1>
+        <p class="text-xl text-muted">{project.subtitle}</p>
+        <p class="mt-6 leading-relaxed whitespace-pre-line">
+          {project.description}
+        </p>
+
+        <!-- Gallery -->
+        <section id="gallery" class="mt-14">
+          <h2 class="uppercase font-bold text-2xl text-heading">Gallery</h2>
+          <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {
+              project.gallery.map((image, index) => (
+                <div class="aspect-video overflow-hidden rounded-2xl border border-border shadow-sm">
+                  <img
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    width="1200"
+                    height="800"
+                    loading="lazy"
+                    class="h-full w-full object-cover"
+                  />
+                </div>
+              ))
+            }
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="shrink-0 lg:w-80">
+        <div class="card bg-background-card border border-border shadow-sm lg:sticky lg:top-28">
+          <div class="card-body gap-6">
+            <div>
+              <h3
+                class="text-xs uppercase tracking-widest font-bold text-muted"
+              >
+                Framework
+              </h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                {
+                  project.framework.map((item) => (
+                    <span class="badge bg-badge-bg text-badge-text border-none font-medium">
+                      {item}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+            <div>
+              <h3
+                class="text-xs uppercase tracking-widest font-bold text-muted"
+              >
+                Tools
+              </h3>
+              <div class="mt-3 flex flex-wrap gap-2">
+                {
+                  project.tools.map((item) => (
+                    <span class="badge badge-outline border-border text-body">
+                      {item}
+                    </span>
+                  ))
+                }
+              </div>
+            </div>
+            <div>
+              <h3
+                class="text-xs uppercase tracking-widest font-bold text-muted"
+              >
+                Color Palette
+              </h3>
+              <div class="mt-3 flex gap-3">
+                {
+                  project.color.map((color) => (
+                    <div class="flex flex-col items-center gap-1.5">
+                      <span
+                        class="size-10 rounded-xl ring-1 ring-border shadow-sm"
+                        style={`background-color:${color};`}
+                      />
+                      <span class="text-[10px] uppercase text-muted">
+                        {color}
+                      </span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Related projects -->
+    <section class="mt-24">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <h2 class="uppercase font-bold text-2xl sm:text-4xl text-heading">Other Projects</h2>
+        <a
+          href="/projects"
+          class="group flex gap-2 items-center uppercase text-heading transition-colors hover:text-primary-hover"
+        >
+          View all
+          <Icon
+            name="lucide:move-right"
+            class="size-5 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </a>
+      </div>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {relatedProjects.map((item) => <ProjectCard project={item} />)}
+      </div>
+    </section>
+  </article>
+</Layout>

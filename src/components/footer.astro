@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+import wave from '../../public/images/wave.png'
+import docrayylogo from '../../public/images/docrayylogo.png'
+
+const socials = [
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/rayyan.ksy',
+    icon: 'lucide:instagram',
+  },
+  {
+    name: 'Email',
+    href: 'mailto:rayyan.syaifullah11@gmail.com',
+    icon: 'lucide:mail',
+  },
+  { name: 'YouTube', href: 'https://youtube.com', icon: 'lucide:youtube' },
+  { name: 'GitHub', href: 'https://github.com/docrayy', icon: 'lucide:github' },
+]
+---
+
+<footer>
+  <Image src={wave} alt="wave" aria-label="wave" class="w-full" />
+
+  <div
+    class="relative bg-heading px-6 sm:px-10 lg:px-20 pt-8 sm:pt-10 pb-0 overflow-hidden
+           h-auto min-h-[60vh]
+           sm:h-screen sm:min-h-0"
+  >
+    <div
+      class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8"
+    >
+      <div class="max-w-md">
+        <p class="text-background-secondary text-base sm:text-lg mb-2">
+          Ready for changes?
+        </p>
+        <h2
+          class="text-background-secondary text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+        >
+          Let&rsquo;s talk
+        </h2>
+        <button
+          onclick="window.open('https://wa.me/+6289654377569', '_blank', 'noopener,noreferrer')"
+          class="btn btn-accent text-white font-semibold px-6 normal-case"
+        >
+          Contact us
+        </button>
+      </div>
+
+      <div class="flex-col items-end justify-start gap-8 sm:gap-16">
+        <div class="flex gap-3">
+          {
+            socials.map((s) => (
+              <a
+                href={s.href}
+                aria-label={s.name}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-[#D9D9D9] text-heading flex items-center justify-center hover:bg-white transition-colors"
+              >
+                <Icon name={s.icon} class="w-5 h-5" />
+              </a>
+            ))
+          }
+        </div>
+
+        <p
+          class="text-[#B8A9A2] text-xs sm:text-sm whitespace-nowrap mt-2 sm:mt-20"
+        >
+          Copyright&copy; 2026 Rayyan | All Rights Reserved
+        </p>
+      </div>
+    </div>
+
+    <hr class="border-t border-background-secondary/25 mt-10 sm:mt-14" />
+
+    <!-- Logo besar, mentok bawah -->
+    <div class="absolute bottom-0">
+      <Image
+        src={docrayylogo}
+        alt="Docrayy"
+        aria-label="Docrayy"
+        class="w-full h-auto select-none pointer-events-none"
+        draggable="false"
+      />
+    </div>
+  </div>
+</footer>

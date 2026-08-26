@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const pathname = Astro.url.pathname
+
+const links = [
+  { href: '/', label: 'Home', icon: 'lucide:house' },
+  { href: '/blogs', label: 'Blogs', icon: 'lucide:pen-line' },
+  { href: '/journals', label: 'Journals', icon: 'lucide:book-open' },
+  { href: '/projects', label: 'Projects', icon: 'lucide:folder' },
+  { href: '/tools', label: 'Tools', icon: 'lucide:wrench' },
+]
+---
+
+<header
+  class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-background/60 backdrop-blur-md border border-border flex items-center justify-center max-w-5xl rounded-4xl px-4 shadow-lg md:hidden"
+>
+  <nav class="flex py-3">
+    <ul class="flex items-center gap-8">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              title={link.label}
+              class:list={[
+                'flex items-center justify-center transition-colors hover:text-heading',
+                pathname === link.href ? 'text-heading' : 'text-heading/50',
+              ]}
+            >
+              <Icon name={link.icon} class="w-5 h-5" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
