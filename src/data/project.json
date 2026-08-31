@@ -12,6 +12,23 @@
     "color": ["#1A2026", "#475569", "#E2E8F0"]
   },
   {
+    "id": "ltv",
+    "title": "Liszthoven Web",
+    "subtitle": "Elevating Music Education in Batam — Powered by Folxcode",
+    "category": "Website",
+    "framework": ["Angular"],
+    "tools": ["Tailwind CSS", "Figma", "Git"],
+    "cover": "/images/projects/ltv.png",
+    "description": "Liszthoven Web is the official web profile and digital platform for Liszthoven, a premier music school based in Batam. Built to streamline student enrollment and community engagement, the platform allows prospective students to explore available music courses, register online, manage student profiles, and access the latest news and educational insights from the music industry.\n\nDeveloped by the Folxcode engineering team, the website features a modern, intuitive user interface designed to deliver an exceptional user experience across all devices. As the Lead Frontend Developer on this project, I was responsible for translating Liszthoven’s brand identity into clean, responsive, and high-performance web interfaces—ensuring a seamless registration flow and an interactive experience for students, parents, and music enthusiasts alike.",
+    "gallery": [
+      "/images/projects/ltv1.png",
+      "/images/projects/ltv2.png",
+      "/images/projects/ltv3.png",
+      "/images/projects/ltv4.png"
+    ],
+    "color": ["#333333", "#AEA391", "#945E34"]
+  },
+  {
     "id": "leazone",
     "title": "Leazone",
     "subtitle": "Your Daily Rental Hub",

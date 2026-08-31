@@ -109,6 +109,10 @@ const experiences = [
                  sm:px-[4%]
                  md:px-[4%]"
         >
+          <div
+            class="absolute inset-0 -z-10 bg-linear-to-t from-background to-transparent"
+          >
+          </div>
           <h2
             class="font-display animate-fade-up animate-once animate-ease-out font-extrabold text-[#5A3E37] uppercase leading-[0.88] tracking-tight
                    text-3xl
@@ -123,7 +127,7 @@ const experiences = [
         <!-- Web Developer label -->
         <span
           class="font-label animate-fade-up animate-once animate-ease-out absolute z-20 text-heading tracking-[0.3em] uppercase
-                 right-[4%] bottom-[12%] text-sm
+                 right-[4%] bottom-[10%] text-xs
                  sm:right-[14%] sm:bottom-[15%] sm:text-lg
                  md:right-[14%] md:bottom-[15%] md:text-2xl
                  lg:right-[14%] lg:bottom-[15%] lg:text-2xl"
@@ -148,7 +152,7 @@ const experiences = [
     <!-- ===== ABOUT ===== -->
     <section id="about">
       <div
-        class="flex flex-col py-16 sm:py-26 items-center justify-center text-body"
+        class="flex flex-col py-16 sm:py-26 items-center justify-center text-body bg-background"
       >
         <div
           class="gap-5 flex flex-col items-center justify-center px-6 opacity-0"
@@ -323,7 +327,7 @@ const experiences = [
                   <h2
                     class="uppercase font-bold mb-2 sm:mb-6 text-lg sm:text-xl"
                   >
-                    Backend & Database
+                    Backend
                   </h2>
                   {
                     ['SQL', 'REST API', 'PHP', 'Node.js'].map((skill) => (

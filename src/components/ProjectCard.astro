@@ -16,16 +16,22 @@ interface Project {
 
 interface Props {
   project: Project
+  large?: boolean
 }
 
-const { project } = Astro.props
+const { project, large = false } = Astro.props
 ---
 
 <a
   href={`/projects/${project.id}`}
-  class="group card shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+  class:list={[
+    'group card shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg',
+    large ? 'lg:min-h-105' : 'lg:min-h-72',
+  ]}
 >
-  <figure class="aspect-auto overflow-hidden">
+  <figure
+    class:list={['overflow-hidden', large ? 'lg:aspect-16/10' : 'aspect-auto']}
+  >
     <Image
       src={project.cover}
       alt={`Cover of ${project.title}`}

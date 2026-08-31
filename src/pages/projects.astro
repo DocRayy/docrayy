@@ -13,19 +13,68 @@ import projectsData from '../data/project.json'
   >
     <div class="flex flex-col items-center gap-5 text-center">
       <h1
-        class="font-display font-extrabold uppercase text-3xl sm:text-5xl text-heading"
+        class="font-display font-extrabold uppercase text-3xl sm:text-5xl text-heading opacity-0"
+        data-animate="fade-up"
       >
         Projects
       </h1>
-      <div class="h-0.5 w-full max-w-200 bg-heading"></div>
-      <p class="text-base sm:text-xl max-w-xl px-4">
+      <div
+        class="h-0.5 w-full max-w-200 bg-heading opacity-0"
+        data-animate="fade-up"
+        data-delay="200"
+      ></div>
+      <p
+        class="text-base sm:text-xl max-w-xl px-4 opacity-0"
+        data-animate="fade-up"
+        data-delay="400"
+      >
         A collection of things I have designed and built — from full-stack web
         apps to small experiments.
       </p>
     </div>
 
     <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {projectsData.map((project) => <ProjectCard project={project} />)}
+      {
+        projectsData.map((project, i) => (
+          <div
+            class="opacity-0"
+            data-animate="fade-up"
+            data-delay={String(200 + i * 100)}
+          >
+            <ProjectCard project={project} />
+          </div>
+        ))
+      }
     </div>
+
+    <script>
+      const animatedElements =
+        document.querySelectorAll<HTMLElement>('[data-animate]')
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement
+              const animation = el.dataset.animate
+              const delay = el.dataset.delay || '0'
+
+              el.style.animationDelay = `${delay}ms`
+              el.classList.add(
+                'animate-once',
+                'animate-ease-out',
+                `animate-${animation}`,
+              )
+              el.classList.remove('opacity-0')
+
+              observer.unobserve(el)
+            }
+          })
+        },
+        { threshold: 0.15 },
+      )
+
+      animatedElements.forEach((el) => observer.observe(el))
+    </script>
   </section>
 </Layout>
