@@ -1,0 +1,299 @@
+---
+import { Icon } from 'astro-icon/components'
+
+const socials = [
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/rayyan.ksy',
+    icon: 'lucide:instagram',
+    gradient:
+      'linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 51%,#cc2366 76%,#bc1888 100%)',
+  },
+  {
+    name: 'Email',
+    href: 'mailto:rayyan.syaifullah11@gmail.com',
+    icon: 'lucide:mail',
+    gradient: 'linear-gradient(135deg,#ff8c7a,#f26d58)',
+  },
+  {
+    name: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/rayyan-kheisar',
+    icon: 'fa6-brands:linkedin',
+    gradient: 'linear-gradient(135deg,#0a66c2,#004182)',
+  },
+  {
+    name: 'GitHub',
+    href: 'https://github.com/docrayy',
+    icon: 'lucide:github',
+    gradient: 'linear-gradient(135deg,#403f44,#232326)',
+  },
+]
+
+const items = socials.map((s, i) => ({
+  ...s,
+  angle: Math.round(180 + i * 30),
+}))
+---
+
+<div class="sfab fixed z-60 md:right-8 md:bottom-8 md:top-auto" id="fab-root">
+  <!-- orbital dashed ring -->
+  <div class="sfab-orbit" id="fab-orbit" aria-hidden="true"></div>
+
+  <!-- radial items -->
+  <ul class="sfab-items absolute inset-0" id="fab-items">
+    {
+      items.map((s) => (
+        <li
+          class="sfab-item absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11"
+          data-angle={s.angle}
+        >
+          <a
+            href={s.href}
+            aria-label={s.name}
+            title={s.name}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sfab-link group"
+            style={`--brand:${s.gradient}`}
+          >
+            <Icon name={s.icon} class="w-5 h-5" />
+            <span class="sfab-tip">{s.name}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <!-- toggle -->
+  <button
+    id="fab-toggle"
+    class="relative flex items-center justify-center w-14 h-14 rounded-full text-white shadow-xl outline-none focus-visible:ring-2 focus-visible:ring-heading/40"
+    aria-label="Buka menu sosial"
+    aria-expanded="false"
+    aria-controls="fab-items"
+    style="background:linear-gradient(135deg,#ff8c7a,#f26d58)"
+  >
+    <span
+      class="sfab-ping absolute inset-0 rounded-full bg-primary/40"
+      id="fab-ping"
+      aria-hidden="true"></span>
+    <Icon name="lucide:plus" class="sfab-icon w-6 h-6 relative" />
+  </button>
+</div>
+
+<style>
+  .sfab-backdrop {
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .sfab.is-open .sfab-backdrop {
+    pointer-events: auto;
+  }
+
+  .sfab-items {
+    z-index: 1;
+  }
+  .sfab-item {
+    pointer-events: none;
+  }
+  .sfab.is-open .sfab-item {
+    pointer-events: auto;
+  }
+
+  #fab-toggle {
+    z-index: 2;
+  }
+
+  .sfab-orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(var(--fab-radius, 88px) * 2);
+    height: calc(var(--fab-radius, 88px) * 2);
+    translate: -50% -50%;
+    border-radius: 9999px;
+    border: 2px dashed #8fd8c8;
+    opacity: 0;
+    z-index: 0;
+  }
+  #fab-root {
+    --fab-radius: 88px;
+  }
+  .sfab-orbit.sfab-spin {
+    animation: sfab-orbit-spin 18s linear infinite;
+  }
+  @keyframes sfab-orbit-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .sfab-ping {
+    opacity: 0;
+    animation: sfab-ping 2.4s ease-out infinite;
+    transition: opacity 0.3s;
+  }
+  .sfab:not(.is-open) .sfab-ping {
+    opacity: 1;
+  }
+  @keyframes sfab-ping {
+    0% {
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    70%,
+    100% {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+
+  .sfab-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff9f5;
+    border: 1px solid #f5d9d0;
+    color: #4a2e2a;
+    box-shadow: 0 8px 20px -8px rgba(74, 46, 42, 0.35);
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background 0.3s,
+      border-color 0.3s,
+      color 0.3s,
+      box-shadow 0.3s;
+  }
+  .sfab-item:hover .sfab-link {
+    transform: scale(1.18);
+    background: var(--brand);
+    border-color: transparent;
+    color: #ffffff;
+    box-shadow: 0 14px 28px -10px rgba(74, 46, 42, 0.5);
+  }
+
+  .sfab-tip {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    translate: 0 -50%;
+    white-space: nowrap;
+    background: #4a2e2a;
+    color: #fff3ec;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.32rem 0.75rem;
+    border-radius: 999px;
+    opacity: 0;
+    scale: 0.6;
+    transform-origin: right center;
+    transition:
+      opacity 0.25s,
+      scale 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+  }
+  .sfab-item:hover .sfab-tip {
+    opacity: 1;
+    scale: 1;
+  }
+</style>
+
+<script>
+  import gsap from 'gsap'
+
+  ;(() => {
+    const root = document.getElementById('fab-root')
+    const toggle = document.getElementById('fab-toggle')
+    const backdrop = document.getElementById('fab-backdrop')
+    const orbit = document.getElementById('fab-orbit')
+    const ping = document.getElementById('fab-ping')
+
+    if (!root || !toggle || !orbit || !ping) return
+
+    const items = gsap.utils.toArray<HTMLElement>('.sfab-item')
+    const icon = toggle.querySelector<HTMLElement>('.sfab-icon')
+
+    const RADIUS =
+      parseFloat(getComputedStyle(root).getPropertyValue('--fab-radius')) || 88
+
+    let open = false
+    let tl: gsap.core.Timeline | null = null
+
+    function buildTimeline() {
+      const t = gsap.timeline({ paused: true })
+
+      if (backdrop) {
+        t.to(backdrop, { opacity: 1, duration: 0.35, ease: 'power2.out' }, 0)
+      }
+      if (icon) {
+        t.to(icon, { rotate: 135, duration: 0.55, ease: 'power3.inOut' }, 0)
+      }
+      t.to(ping, { opacity: 0, duration: 0.25, ease: 'power1.out' }, 0.05)
+
+      items.forEach((item, i) => {
+        const angle =
+          (parseFloat(item.dataset.angle ?? '0') * Math.PI) / 180
+        const x = Math.cos(angle) * RADIUS
+        const y = Math.sin(angle) * RADIUS
+
+        t.fromTo(
+          item,
+          { x: 0, y: 0, scale: 0.2, opacity: 0, rotate: -120 },
+          {
+            x,
+            y,
+            scale: 1,
+            opacity: 1,
+            rotate: 0,
+            duration: 0.6,
+            ease: 'back.out(1.8)',
+          },
+          0.08 + i * 0.05,
+        )
+      })
+
+      t.fromTo(
+        orbit,
+        { scale: 0.4, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.55, ease: 'expo.out' },
+        0.1,
+      )
+
+      return t
+    }
+
+    function openMenu() {
+      if (open) return
+      open = true
+      root!.classList.add('is-open')
+      toggle!.setAttribute('aria-expanded', 'true')
+      toggle!.setAttribute('aria-label', 'Tutup menu sosial')
+      if (!tl) tl = buildTimeline()
+      tl.restart()
+      orbit!.classList.add('sfab-spin')
+    }
+
+    function closeMenu() {
+      if (!open) return
+      open = false
+      root!.classList.remove('is-open')
+      toggle!.setAttribute('aria-expanded', 'false')
+      toggle!.setAttribute('aria-label', 'Buka menu sosial')
+      if (tl) tl.reverse()
+      orbit!.classList.remove('sfab-spin')
+    }
+
+    toggle.addEventListener('click', () => (open ? closeMenu() : openMenu()))
+    if (backdrop) backdrop.addEventListener('click', closeMenu)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu()
+    })
+  })()
+</script>
