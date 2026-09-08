@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://docrayy.my.id" target="_blank"><img src="https://img.shields.io/badge/🌐_Website-docrayy.my.id-333?style=flat-square" /></a>
-  <a href="mailto:rayyankheisar@gmail.com"><img src="https://img.shields.io/badge/✉️_Email-Say_Hi-4ea1a3?style=flat-square" /></a>
+  <a href="mailto:rayyan.syaifullah11@gmail.com"><img src="https://img.shields.io/badge/✉️_Email-Say_Hi-4ea1a3?style=flat-square" /></a>
   <a href="#"><img src="https://img.shields.io/badge/💼_LinkedIn-Let's_Connect-0a66c2?style=flat-square" /></a>
   <a href="#"><img src="https://img.shields.io/badge/🐙_GitHub-view_projects-333?style=flat-square" /></a>
 </p>
@@ -65,14 +65,14 @@
 
 ## 🤝 Connect with Me
 
-| Platform         | Link                                                                 |
-| :--------------- | :------------------------------------------------------------------- |
-| 🌐 **Website**   | [docrayy.my.id](https://docrayy.my.id)                               |
-| ✉️ **Email**     | [rayyankheisar@gmail.com](mailto:rayyan.syaifullah11@gmail.com)      |
-| 💬 **WhatsApp**  | [+62 896-5437-7569](https://wa.me/6289654377569)                     |
-| 🐙 **GitHub**    | [@your-username](https://github.com/docrayy)                         |
-| 🏢 **LinkedIn**  | [Rayyan Kheisar Syaifullah](https://www.linkedin.com/rayyan-kheisar) |
-| 📸 **Instagram** | [@your-username](https://instagram.com/rayyan.ksy)                   |
+| Platform         | Link                                                                  |
+| :--------------- | :-------------------------------------------------------------------- |
+| 🌐 **Website**   | [docrayy.my.id](https://docrayy.my.id)                                |
+| ✉️ **Email**     | [rayyan.syaifullah11@gmail.com](mailto:rayyan.syaifullah11@gmail.com) |
+| 💬 **WhatsApp**  | [+62 896-5437-7569](https://wa.me/6289654377569)                      |
+| 🐙 **GitHub**    | [@DocRayy](https://github.com/docrayy)                                |
+| 🏢 **LinkedIn**  | [Rayyan Kheisar Syaifullah](https://www.linkedin.com/rayyan-kheisar)  |
+| 📸 **Instagram** | [@rayyan.ksy](https://instagram.com/rayyan.ksy)                       |
 
 ---
 
